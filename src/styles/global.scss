@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Secular+One&display=swap');
+
+$black: #000100ff;
+$manatee: #a1a6b4ff;
+$dark-sky-blue: #94c5ccff;
+$beau-blue: #b4d2e7ff;
+$cultured: #f8f8f8ff;
+
+body {
+    font-size: 1em;
+    padding: 1%;
+    color: $black;
+    background-color: $cultured;
+
+    font-family: 'Assistant', sans-serif;
+
+    h1 {
+        color: $dark-sky-blue;
+        font-size: 4em;
+        font-family: 'Secular One', sans-serif;
+    }
+
+    h3 {
+        font-weight: 600;
+    }
+}

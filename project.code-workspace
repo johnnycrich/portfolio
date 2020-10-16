@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+        "eslint.validate": [
+            "javascript",
+            {
+                "language": "typescript"
+            }
+        ],
+        "editor.formatOnSave": true,
+        "eslint.linkTask.enabled": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "[javascript]": {
+            "editor.formatOnSave": false
+        },
+        "[typescript]": {
+            "editor.formatOnSave": true
+        }}
+}

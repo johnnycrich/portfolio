@@ -1,0 +1,29 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.4",
+  "assets": {
+    "main": "client.3a9146b1.js"
+  },
+  "css": {
+    "main": [
+      "client-1773597d.css"
+    ]
+  },
+  "dependencies": {
+    "content/about.md": [
+      "index.d25cf0f4.js",
+      "inject_styles.5607aec6.js",
+      "index-25ee78ed.css"
+    ],
+    "content/highlights.md": [
+      "index.d25cf0f4.js",
+      "inject_styles.5607aec6.js",
+      "index-25ee78ed.css"
+    ],
+    "index.svelte": [
+      "index.d25cf0f4.js",
+      "inject_styles.5607aec6.js",
+      "index-25ee78ed.css"
+    ]
+  }
+}

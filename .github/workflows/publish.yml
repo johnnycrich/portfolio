@@ -1,0 +1,9 @@
+- name: Push directory to another repository
+  uses: cpina/github-action-push-to-another-repository@v1.1
+  env:
+    API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+  with:
+    source-directory: '__sapper__/export'
+    destination-github-username: 'johnnycrich'
+    destination-repository-name: 'johnnycrich.github.io'
+    user-email: johnny.c.rich@gmail.com

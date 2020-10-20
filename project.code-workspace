@@ -16,6 +16,9 @@
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true
         },
+        "[svelte]": {
+        },
+        "editor.defaultFormatter": "svelte.svelte-vscode",
         "[javascript]": {
             "editor.formatOnSave": false
         },

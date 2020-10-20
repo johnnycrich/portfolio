@@ -8,7 +8,7 @@
 // $cultured: #f8f8f8ff;
 html, body {
     height: 100%;
-  }
+}
 body {
     font-size: 1em;
     padding: 1%;
@@ -19,10 +19,21 @@ body {
     
     overflow: hidden;
 
+    transition: all .5s ease;
+
+    &.black {
+        background-color: black;
+        color: white;
+    }
+
     h1 {
         // color: $dark-sky-blue;
-        font-size: 4em;
+        font-size: 2em;
         font-family: 'Secular One', sans-serif;
+        
+        @include mq($from: tablet) {
+            font-size: 4em;
+        }
     }
 
     h3 {

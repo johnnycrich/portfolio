@@ -7,5 +7,11 @@ module.exports = {
     postcss: {
       plugins: [require('autoprefixer')],
     },
+    style: async ({ content, attributes }) => {
+      if (attributes.type !== "text/postcss") return
+      return new Promise((resolve, reject) => {
+        resolve({ code: "", map: "" })
+      })
+    }
   }),
 };

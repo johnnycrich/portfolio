@@ -17,15 +17,12 @@ A free-to-play suite of digital multiplayer games that teach students how to cri
 
 ## @Stake
 A digital multiplayer roleplaying game that fosters creativity and empathy in small group deliberation. It remains under development.
-
 ![@Stake mobile mockup artwork image](as.png) 
 
 ## Unlocking Health
 Unlocking Health is a role-playing and adventure game that takes place in the fictional country of Zariba. Featuring gorgeous, hand-painted visuals, the game charges the player with creating a program proposal fo the people of Zariba that will improve health care and raise key indicators. It was commissioned by the Open Learning Campus with financial support from the Government of Korea. This game was developed in collaboration with the Health, Nutrition and Population Global Practice of the World Bank, and was designed and created by the Engagement Lab.
-
 ![Unlocking Health mobile mockup artwork image](uh.png)
 
 ## Game of Thrones Ascent
 Game of Thrones Ascent was a strategy video game that ran from Feb 2013 - Jan 2019. I served as a principal front-end engineer and led UI engineering from protoype through to production and beyond until mid-2015. The game reached #3 in all games on the App Store, was included in Facebook Games of the Year 2013, and had an estimated over 11 million registered players.
-
 ![Unlocking Health mobile mockup artwork image](gota.png)

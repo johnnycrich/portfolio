@@ -38,7 +38,7 @@ onMount(() => {
 	});
 
 	observerPg1.observe(document.querySelector('#about .body'));
-	observerPg2.observe(document.querySelector('#highlights .body'));
+	observerPg2.observe(document.querySelector('#highlights'));
 	// document.getElementById('highlights').style.marginTop = `${window.innerHeight}px`;
 });
 </script>

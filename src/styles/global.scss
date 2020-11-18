@@ -24,6 +24,16 @@ body {
     &.black {
         background-color: black;
         color: white;
+        svg {
+            filter: invert(1);
+        }
+        a {
+            color: white;
+        }
+    }
+
+    svg {
+        transition: all .5s ease;
     }
 
     h1 {

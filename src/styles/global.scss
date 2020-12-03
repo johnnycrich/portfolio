@@ -6,6 +6,7 @@
 // $dark-sky-blue: #94c5ccff;
 // $beau-blue: #b4d2e7ff;
 // $cultured: #f8f8f8ff;
+
 html, body {
     height: 100%;
 }
@@ -25,6 +26,9 @@ body {
         background-color: black;
         color: white;
         svg {
+            &:not(.bw) {
+                filter: grayscale(100%);
+            }
             filter: invert(1);
         }
         a {
@@ -37,7 +41,6 @@ body {
     }
 
     h1 {
-        // color: $dark-sky-blue;
         font-size: 2em;
         font-family: 'Secular One', sans-serif;
         
@@ -69,16 +72,6 @@ body {
 
             img {
                 max-width: 250px;
-            }
-        }
-
-        h2 {
-            &::before {
-                content: " ";
-                display: block;
-                margin: 1%;
-                width: 25%;
-                border-bottom: solid 1px black;
             }
         }
     }

@@ -62,8 +62,42 @@
             display: flex;
         }
     }
+
     #highlights {
         position: absolute;
+
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory;
+
+        .highlight {
+            display: flex;
+
+            height: 100vh;
+            scroll-snap-align: center;
+            .l {
+                flex-grow: 1;
+                flex-shrink: 0;
+                width: 50%;
+                padding-right: 2%;
+            }
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        margin: 0 6% 0 6%;
+
+        img {
+            max-width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            overflow: hidden;
+        }
     }
 </style>
 
@@ -140,16 +174,22 @@
         </div>
     </div>
 
+    <h3>Highlights</h3>
     <div id="highlights">
-        <div class="frow">
-            <div class="col-md-1-5" />
-            <div class="col-md-1-2 col-xs-1-1 body">
-                <h3>Highlights</h3>
+        {#each highlightsArr as highlight}
+            <div class="highlight">
+                <div class="l">
+                    {#if highlight.slides}
+                        <span class="slides">
+                            {#each highlight.slides as slide}<img src={slide} />{/each}</span>
+                    {:else}<img src={highlight.media} />{/if}
+                </div>
+                <div>
+                    <h2>{highlight.name}</h2>
 
-                {#each highlightsArr as highlight}
                     <p>{highlight.text}</p>
-                {/each}
+                </div>
             </div>
-        </div>
+        {/each}
     </div>
 </section>

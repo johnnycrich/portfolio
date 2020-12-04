@@ -8,7 +8,8 @@
 // $cultured: #f8f8f8ff;
 
 html, body {
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 body {
     font-size: 1em;
@@ -59,20 +60,5 @@ body {
 
     img {
         filter: grayscale(50%);
-    }
-
-    #highlights {
-        p {
-            display: flex;
-            flex-direction: column;
-
-            @include mq($from: tablet) {
-                flex-direction: row;
-            }
-
-            img {
-                max-width: 250px;
-            }
-        }
     }
 }

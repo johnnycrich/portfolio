@@ -31,14 +31,37 @@
             },
         );
 
+        // See when 'highlights' enters/leaves
+        let observerHlights = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    const baseArr = document.querySelector('#header h3');
+                    for (let i = 0; i < 5; i++) {}
+                } else {
+                }
+            },
+            {
+                rootMargin: '0px',
+                threshold: 1.0,
+            },
+        );
+
         observerPg1.observe(document.querySelector('#about .body'));
+        observerHlights.observe(document.getElementById('header'));
     });
 </script>
 
 <style type="text/scss">
     #content {
-        overflow-y: scroll;
         position: absolute;
+
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory;
+
+        max-height: 100vh;
+        overflow-y: scroll;
+
         top: 0;
         left: 1%;
         right: 0;
@@ -48,7 +71,14 @@
                 width: 80%;
             }
         }
+
+        section {
+            position: relative;
+            scroll-snap-align: center;
+            height: 100vh;
+        }
     }
+
     #about {
         height: 100%;
 
@@ -63,40 +93,72 @@
         }
     }
 
-    #highlights {
-        position: absolute;
+    #header {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
-        scroll-snap-type: mandatory;
-        scroll-snap-points-y: repeat(100vh);
-        scroll-snap-type: y mandatory;
+        h3 {
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: xx-large;
 
-        .highlight {
-            display: flex;
-
-            height: 100vh;
-            scroll-snap-align: center;
-            .l {
-                flex-grow: 1;
-                flex-shrink: 0;
-                width: 50%;
-                padding-right: 2%;
-            }
-            div {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            &:not(:nth-child(1)) {
+                opacity: 0;
             }
         }
+    }
 
+    .highlight {
+        display: flex;
         margin: 0 6% 0 6%;
 
-        img {
-            max-width: 100%;
+        .l {
+            flex-grow: 1;
+            flex-shrink: 0;
+            width: 50%;
+            padding-right: 2%;
+        }
+        .r {
+            flex-direction: column;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .slides {
-            display: flex;
-            overflow: hidden;
+        @include mq($until: desktop) {
+            flex-direction: column-reverse;
+            .l {
+                width: 100%;
+            }
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .slides {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        .slide {
+            position: relative;
+            flex: 1;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100vmin;
+            cursor: pointer;
+
+            padding-left: 0.5rem;
+
+            &:hover {
+                flex-grow: 10;
+            }
         }
     }
 </style>
@@ -108,7 +170,7 @@
 <Header />
 
 <section id="content">
-    <div id="about" class="frow">
+    <section id="about" class="frow">
         <!-- <div class="col-md-1-4 col-xs-1-5"></div> -->
         <div id="body" class="col-md-3-5 col-xs-1-1 body">
             <h3>About</h3>
@@ -172,24 +234,31 @@
                         d="M19.9 19.2L15.6 12l4.3-7.2L22 12l-2.1 7.2zm-9.5-.7L5 13.2h8.6l4.3 7.2-7.5-1.9zm0-13.1l7.5-1.9-4.3 7.2H4.9c0 .1 5.5-5.3 5.5-5.3zm11-5.4l-9.8 2.5L10.1 5H7.2L0 12l7.2 7h2.9l1.4 2.5 9.8 2.5 2.6-9.5-1.4-2.5L24 9.5 21.4 0z" /></svg>
             </div>
         </div>
-    </div>
+    </section>
 
-    <h3>Highlights</h3>
-    <div id="highlights">
-        {#each highlightsArr as highlight}
-            <div class="highlight">
-                <div class="l">
-                    {#if highlight.slides}
-                        <span class="slides">
-                            {#each highlight.slides as slide}<img src={slide} />{/each}</span>
-                    {:else}<img src={highlight.media} />{/if}
-                </div>
-                <div>
-                    <h2>{highlight.name}</h2>
+    <section id="header">
+        <h3>Highlights</h3>
+        <h3>Highlights</h3>
+        <h3>Highlights</h3>
+        <h3>Highlights</h3>
+        <h3>Highlights</h3>
+    </section>
 
-                    <p>{highlight.text}</p>
-                </div>
+    {#each highlightsArr as highlight}
+        <section class="highlight">
+            <div class="l">
+                {#if highlight.slides}
+                    <span class="slides">
+                        {#each highlight.slides as slide}
+                            <div class="slide"><img src={slide} /></div>
+                        {/each}</span>
+                {:else}<img src={highlight.media} />{/if}
             </div>
-        {/each}
-    </div>
+            <div class="r">
+                <h2>{highlight.name}</h2>
+
+                <p>{highlight.text}</p>
+            </div>
+        </section>
+    {/each}
 </section>

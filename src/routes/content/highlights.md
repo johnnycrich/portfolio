@@ -6,5 +6,5 @@ content:
       media: bb.gif
     - name: Hygiene with Chhota Bheem
       text: Mobile game component and web presence for a play-based curriculum designed to raise awareness of and encourage best practices for health and hygiene among young children. Hands spread an estimated 80% of common infectious diseases like the common cold and flu. But these disease-causing germs slide off easily with good hand washing technique. The mobile game compliments the curriculum and has the player (Chhota Bheem, from the hugely popular Indian animated comedy adventure television series) running through top-down levels to defeat various bosses and avoid obstacles. The game has been played more than 50k people.
-      slides: [hygiene/1.png, hygiene/2.png]
+      slides: [hygiene/1.png, hygiene/2.png, hygiene/1.png, hygiene/2.png, hygiene/1.png]
 ---

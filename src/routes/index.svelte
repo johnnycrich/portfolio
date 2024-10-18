@@ -55,9 +55,9 @@
     #content {
         position: absolute;
 
-        scroll-snap-type: mandatory;
-        scroll-snap-points-y: repeat(100vh);
-        scroll-snap-type: y mandatory;
+        // scroll-snap-type: proximity;
+        // scroll-snap-points-y: repeat(100vh);
+        // scroll-snap-type: y mandatory;
 
         max-height: 100vh;
         overflow-y: scroll;
@@ -74,7 +74,7 @@
 
         section {
             position: relative;
-            scroll-snap-align: center;
+            // scroll-snap-align:;
             height: 100vh;
         }
     }
@@ -158,6 +158,11 @@
 
             &:hover {
                 flex-grow: 10;
+            }
+
+            video {
+                width: 100%;
+                max-width: 300px;
             }
         }
     }
@@ -250,8 +255,18 @@
                 {#if highlight.slides}
                     <span class="slides">
                         {#each highlight.slides as slide}
-                            <div class="slide"><img src={slide} /></div>
+                            <div class="slide">
+                                {#if slide.indexOf('webm') > 0}
+                                    <video autoplay loop width="150">
+                                        <source src={slide} type="video/webm" />
+                                    </video>
+                                {:else}<img src={slide} />{/if}
+                            </div>
                         {/each}</span>
+                {:else if highlight.video}
+                    <video autoplay loop width="600">
+                        <source src={highlight.video} type="video/webm" />
+                    </video>
                 {:else}<img src={highlight.media} />{/if}
             </div>
             <div class="r">
